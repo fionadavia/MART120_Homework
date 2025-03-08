@@ -34,7 +34,7 @@ a:hover {
     background-image: url(CT.jpg); 
     background-size: cover; 
     background-position: top center;
-    height: 200px; /* Set the height of the banner */
+    height: 380px; /* Set the height of the banner */
     width: 100%; /* Make it stretch across the full width of the page */
 }
 
