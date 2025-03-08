@@ -31,7 +31,7 @@ a:hover {
     padding: 5px;
 }
 .page2-background {
-    background-image: url('path/to/your-image.jpg');
+    background-image: url(CTB.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
