@@ -19,14 +19,13 @@ a:hover {
     color: red;
 }
 
-#important-warning {
+#ifyoudare {
     color: red;
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
 }
 #special-link {
-    background-color: rgb(255, 184, 126);
     color: black;
     font-size: 15px;
     padding: 5px;
