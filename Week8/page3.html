@@ -26,18 +26,51 @@
                 a:hover {
                     color: red;
                 }
+                .form-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin-top: 20px;
+                }
+
+                input, button {
+                    width: 80%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                button {
+                    background-color: darkred;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    background-color: red;
+                }
+
+                .error-message {
+                    color: red;
+                    font-size: 14px;
+                }
             </style>
+     </head> 
          <body>
             <h1>Are you seriously back for more???</h1>
             <p>Just call your therapist jeez. <br>
             Fine click the <a href="page4.html">link</a> <br>
-            Disagree with me? Please do, it's been a while since I've embarrassed someone.
-      <form id="contactForm">
+            Disagree with me? Please do, it's been a while since I've embarrassed someone.</p>
+      <div class="form-container">
+            <form id="contactForm">
         <input type="text" id="name" placeholder="Your Name">
         <input type="email" id="email" placeholder="Your Email">
-        <input type="checkbox" id="terms"> I agree to the terms
+        <input type="checkbox" id="terms"><br>I agree to the terms
         <button type="submit">Submit</button>
       </form>
+    </div>
 
       <script>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
@@ -74,9 +107,8 @@
             }
         });
       </script>
-            only losers skip through <a href="index.html">Home</a> - <a href="page2.html">Page 2</a> 
-            </p>
-     </head>    
+            <p>only losers skip through <a href="index.html">Home</a> - <a href="page2.html">Page 2</a> 
+            </p>   
         </body>
 </html>
             
