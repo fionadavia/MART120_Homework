@@ -1,0 +1,41 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.fun-text {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 75px;
+}
+a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+}
+
+#ifyoudare {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#special-link {
+    color: black;
+    font-size: 15px;
+    padding: 5px;
+}
+.banner {
+    background-image: url(CT.jpg); 
+    background-size: cover; 
+    background-position: top center;
+    height: 380px; /* Set the height of the banner */
+    width: 100%; /* Make it stretch across the full width of the page */
+}
+
+
