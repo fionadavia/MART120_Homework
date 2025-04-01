@@ -6,7 +6,7 @@ function setup() {
 function draw() {
   background(255, 255, 197);
 fill(0);
-text("Good morning!", 10, 80);
+text("Howdy Mate", 10, 80);
 
   // Head
   strokeWeight(15);
