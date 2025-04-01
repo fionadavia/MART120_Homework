@@ -1,4 +1,3 @@
-// Fiona Davia's Self-Portrait using p5.js
 function setup() {
   createCanvas(500, 600);
 }
@@ -27,8 +26,8 @@ text("Howdy Mate", 10, 80);
   fill(255, 100, 100);
   ellipse(250, 135, 15, 10);
 
-  // Hair (with bangs)
-  stroke(139, 69, 19);  // Auburn color
+  // Hair 
+  stroke(139, 69, 19);  
 
   strokeWeight(20); // Hairline weight
   line(130, 173, 180, 50);
@@ -40,10 +39,10 @@ text("Howdy Mate", 10, 80);
 
   // Body
   strokeWeight(10);
-  fill(245, 245, 235);  // Off-white shirt
+  fill(245, 245, 235);  
   rect(200, 185, 100, 150);
   
-  // decoration
+  // shirt decoration
     fill(176, 208, 168);
     triangle(220,320,250,220,280,320)
 
