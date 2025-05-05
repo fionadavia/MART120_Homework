@@ -1,6 +1,16 @@
+let diverImg, sharkImg, coralImg, pearlImg;
 let diver;
 let shark;
 let pearl;
+let corals = [];
+
+function preload() {
+  // Load images
+  diverImg = loadImage('assets/diver.png');
+  sharkImg = loadImage('assets/shark.png');
+  coralImg = loadImage('assets/coral.png');
+  pearlImg = loadImage('assets/pearl.png');
+}
 
 function setup() {
   createCanvas(800, 600);
@@ -25,25 +35,37 @@ function setup() {
     y: height / 2,
     size: 30
   };
+
+  // Create initial coral obstacles
+  for (let i = 0; i < 5; i++) {
+    corals.push({
+      x: random(width, width + 200),
+      y: random(height),
+      size: 30
+    });
+  }
 }
 
 function draw() {
   background(0, 100, 200); // ocean blue
 
   // Draw pearl
-  fill(255, 255, 200);
-  ellipse(pearl.x, pearl.y, pearl.size);
+  image(pearlImg, pearl.x, pearl.y, pearl.size, pearl.size);
 
   // Draw diver
-  fill(255);
-  rect(diver.x, diver.y, diver.size, diver.size);
+  image(diverImg, diver.x, diver.y, diver.size, diver.size);
 
   // Draw shark
-  fill(150, 0, 0);
-  ellipse(shark.x, shark.y, shark.size);
+  image(sharkImg, shark.x, shark.y, shark.size, shark.size);
+
+  // Draw corals (obstacles)
+  for (let coral of corals) {
+    image(coralImg, coral.x, coral.y, coral.size, coral.size);
+  }
 
   moveDiver();
   moveShark();
+  moveCorals();
   checkCollisions();
 }
 
@@ -67,6 +89,18 @@ function moveShark() {
   if (shark.y < 0 || shark.y > height) shark.dy *= -1;
 }
 
+function moveCorals() {
+  for (let coral of corals) {
+    coral.x -= 3; // Move obstacles leftward
+
+    // Reset coral to the right side once it goes off-screen
+    if (coral.x < 0) {
+      coral.x = random(width, width + 200);
+      coral.y = random(height);
+    }
+  }
+}
+
 function checkCollisions() {
   // Collision with shark
   let d1 = dist(diver.x, diver.y, shark.x, shark.y);
@@ -80,5 +114,14 @@ function checkCollisions() {
   if (d2 < (diver.size + pearl.size) / 2) {
     noLoop();
     alert("You got the pearl! You win!");
+  }
+
+  // Collision with coral (obstacles)
+  for (let coral of corals) {
+    let d3 = dist(diver.x, diver.y, coral.x, coral.y);
+    if (d3 < (diver.size + coral.size) / 2) {
+      noLoop();
+      alert("You hit a coral! Game Over!");
+    }
   }
 }
