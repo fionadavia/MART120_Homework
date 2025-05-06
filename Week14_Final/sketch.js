@@ -27,10 +27,10 @@ function draw() {
   background(0, 100, 200); // Ocean blue
 
   // Draw pearl
-  image(pearlImg, pearl.x, pearl.y, 77.5, 81.5); // Scaled proportionally
+  image(pearlImg, pearl.x, pearl.y, 77.5, 81.5); 
 
   // Draw diver
-  image(diverImg, diver.x, diver.y, 100, 32.6); // Scaled proportionally
+  image(diverImg, diver.x, diver.y, 100, 32.6); 
 
   // Draw sharks
   for (let shark of sharks) {
@@ -154,9 +154,10 @@ function resetGame() {
 }
 
 function resetPearl() {
-  pearl.x = width - 100;
-  pearl.y = random(height);
+  pearl.x = random(width - 155); // Subtract pearl width so it doesn’t go offscreen
+  pearl.y = random(height - 163); // Subtract pearl height
 }
+
 
 function gameOver() {
   noLoop();
